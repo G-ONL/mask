@@ -14,6 +14,12 @@ public class MasksService {
   private final MasksRepository masksRepository;
 
   public List<MasksListResponseDto> findAll() {
-    return  masksRepository.findAll().stream().map(MasksListResponseDto::new).collect(Collectors.toList());
+    return masksRepository.findAll().stream().map(MasksListResponseDto::new)
+        .collect(Collectors.toList());
+  }
+
+  public List<MasksListResponseDto> find(String name, String code, String company, String grade) {
+    return masksRepository.findBySearch(name, code, company, grade).stream()
+        .map(MasksListResponseDto::new).collect(Collectors.toList());
   }
 }
