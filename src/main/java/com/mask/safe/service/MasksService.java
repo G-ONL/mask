@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class MasksService {
 
-  private MasksRepository masksRepository;
+  private final MasksRepository masksRepository;
 
 }
