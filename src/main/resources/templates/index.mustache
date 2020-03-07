@@ -1,3 +1,36 @@
 {{>layout/header}}
+
 <h1>마스크</h1>
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-6">
+
+    </div>
+  </div>
+  <br>
+  <!-- 목록 출력 영역 -->
+  <table class="table table-horizontal table-bordered">
+    <thead class="thead-strong">
+    <tr>
+      <th>순번</th>
+      <th>품목기준코드</th>
+      <th>품목명</th>
+      <th>업체명</th>
+      <th>등급</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    {{#masks}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{code}}</td>
+        <td>{{name}}</td>
+        <td>{{company}}</td>
+        <td>{{grade}}</td>
+      </tr>
+    {{/masks}}
+    </tbody>
+  </table>
+</div>
+
 {{>layout/footer}}
