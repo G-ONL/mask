@@ -23,7 +23,6 @@ import lombok.NoArgsConstructor;
 public class Masks extends BaseTimeEntity {
 
   @Id
-  @Column(name = "MASK_ID")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
