@@ -1,5 +1,7 @@
 package com.mask.safe.domain.maskImages;
 
-public interface MaskImagesRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MaskImagesRepository extends JpaRepository<MaskImages, Long> {
 
 }

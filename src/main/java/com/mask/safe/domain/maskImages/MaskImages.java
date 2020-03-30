@@ -1,23 +1,24 @@
 package com.mask.safe.domain.maskImages;
 
 import com.mask.safe.commons.BaseTimeEntity;
-import com.mask.safe.domain.masks.Masks;
-import java.util.Base64;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Getter
+@NoArgsConstructor
 @Entity
 public class MaskImages extends BaseTimeEntity {
 
   @Id
+  @Column(name = "MASK_IMAGE_ID")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @Column(nullable = false)
   private String uri;
-
 }
