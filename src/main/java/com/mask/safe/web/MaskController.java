@@ -5,21 +5,20 @@ import com.mask.safe.service.MasksService;
 import com.mask.safe.web.dto.MasksRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.stereotype.Controller;
+import org.springframework.data.domain.Pageable;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@Controller
+@RestController
 public class MaskController {
 
   private final MasksService masksService;
 
   @GetMapping("/search")
-  public String search(Model model
+  public Page<Masks> search(Model model
       , @RequestParam("name") String name
       , @RequestParam("company") String company
       , @RequestParam("code") String code
@@ -34,13 +33,6 @@ public class MaskController {
         .build();
 
     Page<Masks> masksPage = masksService.findBySearch(masksRequestDto, pageable);
-    model.addAttribute("masks", masksPage);
-    System.out.println(masksPage.getTotalElements());
-    System.out.println(masksPage.getTotalPages());
-    System.out.println(pageable.getPageNumber());
-    System.out.println(masksPage.getSize());
-    System.out.println(masksPage.getContent());
-
-    return "index";
+    return masksPage;
   }
 }

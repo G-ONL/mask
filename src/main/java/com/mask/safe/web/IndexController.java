@@ -22,5 +22,4 @@ public class IndexController {
     model.addAttribute("masks", masksPage);
     return "index";
   }
-
 }

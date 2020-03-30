@@ -1,60 +1,63 @@
 {{>layout/header}}
 
-<h1 style="text-align: center;">당신의 마스크는 안전합니까?</h1>
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar"
+        style="background-color:lightblue;">
+  <h1 style="text-align: center; text-color: lightblue"></h1>
+</header>
 <br>
-<div class="col-md-12">
-  <form action="/search" method="get">
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="code">품목기준코드</label>
-        <input type="text" class="form-control" name="code" id="code">
+<div class="container">
+  <div class="col-md-12">
+    <form action="/search" method="get">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="code">품목기준코드</label>
+          <input type="text" class="form-control" name="code" id="code">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="name">품목명</label>
+          <input type="text" class="form-control" name="name" id="name">
+        </div>
       </div>
-      <div class="form-group col-md-6">
-        <label for="name">품목명</label>
-        <input type="text" class="form-control" name="name" id="name">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="company">업체명</label>
+          <input type="text" class="form-control" name="company" id="company">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="grade">등급</label>
+          <select id="grade" name="grade" class="form-control">
+            <option value="" selected>전체</option>
+            <option value="KF80">KF80</option>
+            <option value="KF94">KF94</option>
+            <option value="KF99">KF99</option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="company">업체명</label>
-        <input type="text" class="form-control" name="company" id="company">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="grade">등급</label>
-        <select id="grade" name="grade" class="form-control">
-          <option value="" selected>전체</option>
-          <option value="KF80">KF80</option>
-          <option value="KF94">KF94</option>
-          <option value="KF99">KF99</option>
-        </select>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary" style="float:right;">찾기</button>
-  </form>
-  <br>
-  <!-- 목록 출력 영역 -->
-  <table class="table table-horizontal table-bordered">
-    <thead class="thead-strong">
-    <tr>
-      <th>순번</th>
-      <th>품목기준코드</th>
-      <th>품목명</th>
-      <th>업체명</th>
-      <th>등급</th>
-    </tr>
-    </thead>
-    <tbody id="tbody">
-    {{#masks}}
+      <button type="button" id="btn-search" class="btn btn-primary" style="float:right; margin-bottom:15px;">찾기</button>
+    </form>
+    <br>
+    <!-- 목록 출력 영역 -->
+    <table class="table table-horizontal table-bordered">
+      <thead class="thead-strong">
       <tr>
-        <td>{{id}}</td>
-        <td>{{code}}</td>
-        <td>{{name}}</td>
-        <td>{{company}}</td>
-        <td>{{grade}}</td>
+        <th>품목기준코드</th>
+        <th>품목명</th>
+        <th>업체명</th>
+        <th>등급</th>
       </tr>
-    {{/masks}}
-    </tbody>
-  </table>
+      </thead>
+      <tbody id="tbody">
+      {{#masks}}
+        <tr>
+          <td>{{code}}</td>
+          <td>{{name}}</td>
+          <td>{{company}}</td>
+          <td>{{grade}}</td>
+        </tr>
+      {{/masks}}
+      </tbody>
+    </table>
+  </div>
 </div>
 
 {{>layout/footer}}

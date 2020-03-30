@@ -6,3 +6,6 @@
 
 build
 out
+
+application-real.properties
+application-real-db.properties
