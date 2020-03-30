@@ -1,9 +1,6 @@
 {{>layout/header}}
 
-<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar"
-        style="background-color:lightblue;">
-  <h1 style="text-align: center; text-color: lightblue"></h1>
-</header>
+
 <br>
 <div class="container">
   <div class="col-md-12">
@@ -34,10 +31,13 @@
         </div>
       </div>
       <div>
-        <button type="button" id="btn-search" class="btn btn-primary" style="float:right; margin-bottom:15px;">찾기</button>
+        <button type="button" id="btn-search" class="btn btn-primary"
+                style="float:right; margin-bottom:15px;">찾기
+        </button>
         <p id="totalElements" style="display: inline-block;"></p>
       </div>
     </form>
+
     <br>
     <!-- 목록 출력 영역 -->
     <table class="table table-horizontal table-bordered">
@@ -50,16 +50,10 @@
       </tr>
       </thead>
       <tbody id="tbody">
-      {{#masks}}
-        <tr>
-          <td>{{code}}</td>
-          <td>{{name}}</td>
-          <td>{{company}}</td>
-          <td>{{grade}}</td>
-        </tr>
-      {{/masks}}
       </tbody>
     </table>
+
+
   </div>
 </div>
 
