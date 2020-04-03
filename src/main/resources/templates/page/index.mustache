@@ -20,6 +20,16 @@
       margin-top: 30px;
     }
 
+    .page-container {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    footer {
+      bottom: 0;
+      width: 100%;
+    }
+
     @media (min-width: 768px) {
       .card-49 {
         max-width: 48%;
@@ -51,7 +61,7 @@
   </div>
 </header>
 
-<div class="container bg-dark p-5">
+<div class="container page-container p-4">
   <div class="">
     <div class="row">
       <div class="col-sm-6">
@@ -69,16 +79,36 @@
       </div>
     </div>
     <div class="clearfix">
-      <button type="button" class="btn margin-top-30 btn-outline-light btn-block float-right">검색
+      <button type="button" class="btn margin-top-30 btn-info btn-block float-right">검색
       </button>
     </div>
   </div>
 
+  <div class="margin-top-30">
+    <span class="d-block m-3 bg-secondary border"></span>
+  </div>
+  <div class="cardcollection margin-top-30 card-group">
+    <div class="row">
 
-  <span class="d-block m-3 bg-secondary border"></span>
+      <div class="col-md-6 card mb-3 m-1 card-49">
+        <div class="row no-gutters">
+          <div class="col-md-4 card-img-middle">
+            <img
+                src="https://image.shutterstock.com/image-photo/doctor-mask-corona-virus-protection-260nw-1631607358.jpg"
+                class="card-img">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">유한 양행 KF 94 마스크 유한 양행 KF 94 마스크</h5>
+              <p class="card-text">코드 : 987656</p>
+              <p class="card-text">회사명 : 유한 양행</p>
+              <p class="card-text">등급 : KF 94</p>
 
-  <div class="cardcollection">
-    <div class="row center">
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="col-md-6 card mb-3 m-1 card-49">
         <div class="row no-gutters">
@@ -90,8 +120,7 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">Card Title</h5>
-              <p class="card-text">This is a wider card This is a wider cardThis is a wider cardThis
-                is a wider cardThis is a wider card</p>
+              <p class="card-text">This is a wider card</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
@@ -117,7 +146,37 @@
     </div>
   </div>
 
+  <div class="margin-top-30">
+    <nav aria-label="...">
+      <ul class="pagination center">
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+      <span class="page-link">
+        2
+      </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
+<footer>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <img src="https://image.flaticon.com/icons/svg/1535/1535376.svg" class="mask" width="40"
+             height="40">
+        <strong>마스크 Footer</strong>
+      </a>
+    </div>
+  </div>
+</footer>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

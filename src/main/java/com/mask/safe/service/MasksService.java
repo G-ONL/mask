@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Service
@@ -14,10 +15,7 @@ public class MasksService {
 
   private final MasksRepository masksRepository;
 
-  public Page<Masks> findAll(Pageable pageable) {
-    return masksRepository.findAll(pageable);
-  }
-
+  @Transactional(readOnly = true)
   public Page<Masks> findBySearch(MasksRequestDto masksRequestDto, Pageable pageable) {
     String name = masksRequestDto.getName();
     String code = masksRequestDto.getCode();
