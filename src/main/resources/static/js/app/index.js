@@ -19,8 +19,6 @@ var index = {
     code = $('#code').val();
     page = 0;
 
-    console.log("name : " + name + " company : " + company + " grade : " + grade
-        + " code : " + code);
     $.ajax({
       type: 'GET',
       url: '/search',
@@ -38,7 +36,6 @@ var index = {
       //div 안의 element를 .empty()하고
       // 그 안에 채워넣기
 
-      console.log(data);
       $("#card-body").empty();
       var content = data.content;
       var totalElements = data.totalElements;
@@ -51,7 +48,6 @@ var index = {
         var company = content[i].company;
         var grade = content[i].grade;
         var code = content[i].code;
-        console.log(name + " --- " + company + " --- " + code);
 
         var table_body_element = "<tr><td>" + code + "</td><td>" + name
             + "</td><td>" + company + "</td><td>" + grade + "</td></tr>"
@@ -140,7 +136,6 @@ $(document).on('click', ".page-click", function () {
 
   var currPage = $(this).attr("id");
 
-  console.log("클릭 : " + currPage);
   $.ajax({
     type: 'GET',
     url: '/search',
@@ -158,7 +153,6 @@ $(document).on('click', ".page-click", function () {
     //div 안의 element를 .empty()하고
     // 그 안에 채워넣기
 
-    console.log(data);
     $("#card-body").empty();
     var content = data.content;
     var totalElements = data.totalElements;
@@ -172,7 +166,6 @@ $(document).on('click', ".page-click", function () {
       var company = content[i].company;
       var grade = content[i].grade;
       var code = content[i].code;
-      console.log(name + " --- " + company + " --- " + code);
 
       var table_body_element = "<tr><td>" + code + "</td><td>" + name
           + "</td><td>" + company + "</td><td>" + grade + "</td></tr>"
