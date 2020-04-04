@@ -12,10 +12,5 @@ public class IndexController {
   public String index() {
     return "index";
   }
-
-  @GetMapping("/index")
-  public String newIndex() {
-    return "page/index";
-  }
 }
 
